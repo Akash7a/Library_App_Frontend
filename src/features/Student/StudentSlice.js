@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_APP_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_APP_URL || "https://library-app-backend-rl3l.onrender.com";
 
 const initialState = {
     error: null,
