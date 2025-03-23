@@ -1,0 +1,104 @@
+/* Custom styles for React Calendar */
+.custom-calendar-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-calendar {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Keep one column for the month/year navigation */
+    grid-template-rows: auto 1fr; /* Allow the top navigation to take space */
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+/* Tile Styles */
+.custom-calendar .react-calendar__tile {
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-size: 1rem; /* Adjusted font size for readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.custom-calendar .react-calendar__tile:enabled:hover,
+.custom-calendar .react-calendar__tile:enabled:focus {
+    transform: scale(1.05);
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.4);
+}
+
+.custom-calendar .react-calendar__tile--now {
+    background: #fffae6;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.custom-calendar .react-calendar__tile--active {
+    background: #4caf50;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation Styles */
+.custom-calendar .react-calendar__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+}
+
+.custom-calendar .react-calendar__navigation button {
+    color: #4caf50;
+    font-size: 1rem;
+}
+
+.custom-calendar .react-calendar__navigation button:enabled:hover,
+.custom-calendar .react-calendar__navigation button:enabled:focus {
+    background: #e0f2e9;
+    color: #2e7d32;
+}
+
+.custom-calendar .react-calendar__month-view__days__day--weekend {
+    color: #ff5722;
+}
+
+/* Adjust abbr styles for better spacing */
+abbr {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 600px) {
+    .custom-calendar {
+        width: 100%;
+        grid-template-columns: 1fr; /* Single column for mobile */
+        grid-template-rows: auto 1fr; /* Ensure the navigation stays on top */
+    }
+
+    /* Adjust font size and spacing on small screens */
+    abbr {
+        font-size: 0.8rem;
+        margin: 10px;
+    }
+
+    /* Adjust tile padding and font size for better readability */
+    .custom-calendar .react-calendar__tile {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
