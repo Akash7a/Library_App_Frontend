@@ -120,7 +120,8 @@ const Home = () => {
                               onClick={() => {
                                 const message = `Dear ${student.name},\n\nWe hope you're doing well! We wanted to remind you that your subscription is nearing its expiration. To ensure uninterrupted service, kindly renew before *${new Date(student.subscriptionEndDate).toLocaleDateString()}*.\n\nIf you have any questions or need assistance, feel free to reach out. We appreciate having you with us!\n\nBest regards.`;
 
-                                dispatch(sendWhatsappMessage({ number: student.mobile, message }));
+                                const whatsappUrl = `https://wa.me/${student.mobile}?text=${encodeURIComponent(message)}`;
+                                window.open(whatsappUrl, '_blank');
                               }}
                             >
                               Message <i className="bi bi-whatsapp text-white text-md"></i>
